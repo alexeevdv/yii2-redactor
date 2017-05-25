@@ -42,8 +42,8 @@ class FileUploadModel extends \yii\base\Model
     public function getResponse()
     {
         return [
-            'filelink' => Yii::$app->controller->module->getUrl($this->getFileName()),
-            'filename' => $this->getFileName()
+            'url' => Yii::$app->controller->module->getUrl($this->getFileName()),
+            'id' => uniqid()
         ];
     }
 

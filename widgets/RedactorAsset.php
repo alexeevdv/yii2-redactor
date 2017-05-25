@@ -14,18 +14,17 @@ namespace yii\redactor\widgets;
  */
 class RedactorAsset extends \yii\web\AssetBundle
 {
-    public $sourcePath = '@vendor/yiidoc/yii2-redactor/assets';
     public $depends = ['yii\web\JqueryAsset'];
 
-    public function init()
-    {
-        if (YII_DEBUG) {
-            $this->js[] = 'redactor.js';
-            $this->css[] = 'redactor.css';
-        } else {
-            $this->js[] = 'redactor.min.js';
-            $this->css[] = 'redactor.min.css';
-        }
-    }
+    public $js = [
+        'https://imperavi.com/assets/redactor/redactor.js?r',
+        'https://imperavi.com/assets/js/plugins/source/source.js?r',
+        'https://imperavi.com/assets/js/plugins/table/table.js?r',
+        'https://imperavi.com/assets/js/plugins/video/video.js?r',
+        'https://imperavi.com/assets/js/plugins/imagemanager/imagemanager.js'
+    ];
 
+    public $css = [
+        'https://imperavi.com/assets/redactor/redactor.css?r',
+    ];
 }
